@@ -108,51 +108,8 @@ python inference_cpu.py {model_name} {model_step}
 
 ## To-Do
 
-- It is very UNSTABLE.
+- It is NOT TESTED.
 
-- Need to fix ```data_utils.py``` in TextAudioLoader class.
-
-```
-Traceback (most recent call last):
-  File "train.py", line 334, in <module>
-    main()
-  File "train.py", line 58, in main
-    mp.spawn(run, nprocs=n_gpus, args=(n_gpus, hps,))
-  File "/home/ori/anaconda3/envs/vits/lib/python3.8/site-packages/torch/multiprocessing/spawn.py", line 240, in spawn
-    return start_processes(fn, args, nprocs, join, daemon, start_method='spawn')
-  File "/home/ori/anaconda3/envs/vits/lib/python3.8/site-packages/torch/multiprocessing/spawn.py", line 198, in start_processes
-    while not context.join():
-  File "/home/ori/anaconda3/envs/vits/lib/python3.8/site-packages/torch/multiprocessing/spawn.py", line 160, in join
-    raise ProcessRaisedException(msg, error_index, failed_process.pid)
-torch.multiprocessing.spawn.ProcessRaisedException: 
-
--- Process 0 terminated with the following error:
-Traceback (most recent call last):
-  File "/home/ori/anaconda3/envs/vits/lib/python3.8/site-packages/torch/multiprocessing/spawn.py", line 69, in _wrap
-    fn(i, *args)
-  File "/home/ori/Desktop/MB-iSTFT-VITS-Korean/train.py", line 130, in run
-  File "/home/ori/Desktop/MB-iSTFT-VITS-Korean/train.py", line 151, in train_and_evaluate
-    with autocast(enabled=hps.train.fp16_run):
-  File "/home/ori/anaconda3/envs/vits/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 530, in __next__
-    data = self._next_data()
-  File "/home/ori/anaconda3/envs/vits/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1224, in _next_data
-    return self._process_data(data)
-  File "/home/ori/anaconda3/envs/vits/lib/python3.8/site-packages/torch/utils/data/dataloader.py", line 1250, in _process_data
-    data.reraise()
-  File "/home/ori/anaconda3/envs/vits/lib/python3.8/site-packages/torch/_utils.py", line 457, in reraise
-    raise exception
-AttributeError: Caught AttributeError in DataLoader worker process 0.
-Original Traceback (most recent call last):
-  File "/home/ori/anaconda3/envs/vits/lib/python3.8/site-packages/torch/utils/data/_utils/worker.py", line 287, in _worker_loop
-    data = fetcher.fetch(index)
-  File "/home/ori/anaconda3/envs/vits/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 49, in fetch
-    data = [self.dataset[idx] for idx in possibly_batched_index]
-  File "/home/ori/anaconda3/envs/vits/lib/python3.8/site-packages/torch/utils/data/_utils/fetch.py", line 49, in <listcomp>
-    data = [self.dataset[idx] for idx in possibly_batched_index]
-  File "/home/ori/Desktop/MB-iSTFT-VITS-Korean/data_utils.py", line 94, in __getitem__
-    return self.get_audio_text_pair(self.audiopaths_and_text[index])
-AttributeError: 'TextAudioLoader' object has no attribute 'audiopaths_and_text'
-```
 
 ## References
 - [MasayaKawamura/MB-iSTFT-VITS](https://github.com/MasayaKawamura/MB-iSTFT-VITS)
