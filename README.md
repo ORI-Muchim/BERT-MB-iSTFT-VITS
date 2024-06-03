@@ -108,7 +108,9 @@ python inference_cpu.py {model_name} {model_step}
 
 ## To-Do
 
-- It is very UNSTABLE. Need to fix logic.
+- It is very UNSTABLE.
+
+- Need to fix ```data_utils.py``` in TextAudioLoader class.
 
 ```
 Traceback (most recent call last):
