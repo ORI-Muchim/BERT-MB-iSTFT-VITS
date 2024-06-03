@@ -13,7 +13,6 @@ import numpy as np
 
 """Multi speaker version"""
 
-
 class TextAudioLoader(torch.utils.data.Dataset):
     """
     1) loads audio, speaker_id, text pairs
