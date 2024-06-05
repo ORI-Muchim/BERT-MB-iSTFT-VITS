@@ -10,9 +10,9 @@ import librosa
 from scipy.io.wavfile import read
 import torch
 
-from .text.cleaner import clean_text
-from .text import cleaned_text_to_sequence, get_bert
-from . import commons
+from text.cleaner import clean_text
+from text import cleaned_text_to_sequence, get_bert
+import commons
 
 MATPLOTLIB_FLAG = False
 

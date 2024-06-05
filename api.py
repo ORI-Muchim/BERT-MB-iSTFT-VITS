@@ -10,11 +10,11 @@ import torch.nn as nn
 from tqdm import tqdm
 import torch
 
-from . import utils
-from . import commons
-from .models import SynthesizerTrn
-from .split_utils import split_sentence
-from .mel_processing import spectrogram_torch, spectrogram_torch_conv
+import utils
+import commons
+from models import SynthesizerTrn
+from split_utils import split_sentence
+from mel_processing import spectrogram_torch, spectrogram_torch_conv
 
 class TTS(nn.Module):
     def __init__(self, 
@@ -27,7 +27,6 @@ class TTS(nn.Module):
         if device == 'auto':
             device = 'cpu'
             if torch.cuda.is_available(): device = 'cuda'
-            if torch.backends.mps.is_available(): device = 'mps'
         if 'cuda' in device:
             assert torch.cuda.is_available()
 

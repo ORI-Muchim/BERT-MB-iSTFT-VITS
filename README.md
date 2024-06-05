@@ -103,7 +103,7 @@ Resume training from lastest checkpoint is automatic.
 OR, Check [inference.py](inference.py)
 
 ```sh
-python inference.py --ckpt_path ./models/kss --text 그는 괜찮은 척 하려고 애쓰는 것 같았다.
+python inference.py -m ./models/kss/G_64000.pth -t 그는 괜찮은 척 하려고 애쓰는 것 같았다.
 ```
 
 ## To-Do
