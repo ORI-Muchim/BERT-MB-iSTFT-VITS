@@ -108,7 +108,7 @@ python inference.py -m ./models/kss/G_64000.pth -t 그는 괜찮은 척 하려�
 
 ## To-Do
 
-- It is NOT TESTED.
+- Korean TTS operation confirmed
 
 
 ## References
