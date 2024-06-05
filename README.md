@@ -100,10 +100,10 @@ python train.py -c <config> -m <folder>
 ```
 Resume training from lastest checkpoint is automatic.
 
-OR, Check [inference_cpu.py](inference_cpu.py)
+OR, Check [inference.py](inference.py)
 
 ```sh
-python inference_cpu.py {model_name} {model_step}
+python inference.py --ckpt_path ./models/kss --text 그는 괜찮은 척 하려고 애쓰는 것 같았다.
 ```
 
 ## To-Do
