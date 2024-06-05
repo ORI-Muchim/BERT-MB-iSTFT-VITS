@@ -8,6 +8,7 @@
 - [Create transcript](#create-transcript)
 - [Preprocess](#preprocess)
 - [Training](#training)
+- [Inference](#inference)
 - [To-Do](#to-do)
 - [References](#references)
 
@@ -92,7 +93,6 @@ If your speech file is either not `Mono / PCM-16`, the you should resample your 
 
 - If you have done preprocessing, set "cleaned_text" to true. 
 - Change `training_files` and `validation_files` to the path of preprocessed manifest files. 
-- Select same `text_cleaners` you used in preprocessing step. 
 
 ## Training
 ```sh
@@ -100,10 +100,11 @@ python train.py -c <config> -m <folder>
 ```
 Resume training from lastest checkpoint is automatic.
 
-OR, Check [inference.py](inference.py)
+## Inference
+Check [inference.py](inference.py)
 
 ```sh
-python inference.py -m ./models/kss/G_64000.pth -t 그는 괜찮은 척 하려고 애쓰는 것 같았다.
+python inference.py -m ./models/kss/G_64000.pth
 ```
 
 ## To-Do
