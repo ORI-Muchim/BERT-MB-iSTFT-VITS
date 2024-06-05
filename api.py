@@ -31,7 +31,6 @@ class TTS(nn.Module):
         if 'cuda' in device:
             assert torch.cuda.is_available()
 
-        # config_path = 
         hps = utils.get_hparams_from_file(config_path)
 
         num_languages = hps.num_languages

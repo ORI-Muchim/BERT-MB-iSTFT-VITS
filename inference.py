@@ -1,18 +1,42 @@
 import os
 import click
 from api import TTS
+import langdetect
 
     
 @click.command()
 @click.option('--ckpt_path', '-m', type=str, default=None, help="Path to the checkpoint file")
 @click.option('--text', '-t', type=str, default=None, help="Text to speak")
-@click.option('--language', '-l', type=str, default="EN", help="Language of the model")
 @click.option('--output_dir', '-o', type=str, default="outputs", help="Path to the output")
+
+def langdetector(text):
+    lang = langdetect.detect(text)
+
+    if lang == 'ko':
+        language = 'KR'
+        return language
+    elif lang == 'ja':
+        language = 'JP'
+        return language
+    elif lang == 'en':
+        language = 'EN'
+        return language
+    elif lang == 'zh-cn':
+        language = 'ZH'
+        return language
+    elif lang == 'es':
+        language = 'ES'
+        return language
+    elif lang == 'fr':
+        language = 'FR'
+        return language
+
 
 def main(ckpt_path, text, language, output_dir):
     if ckpt_path is None:
         raise ValueError("The model_path must be specified")
     
+    language = langdetector(text)
     config_path = os.path.join(os.path.dirname(ckpt_path), 'config.json')
     model = TTS(language=language, config_path=config_path, ckpt_path=ckpt_path)
     
