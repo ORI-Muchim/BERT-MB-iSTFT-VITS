@@ -13,7 +13,7 @@ def main(ckpt_path, output_dir):
     if ckpt_path is None:
         raise ValueError("The model_path must be specified")
     
-    text = "거대 양당이 차기 지도부를 뽑는 전당대회를 앞두고 나란히 당헌·당규 손질에 나섰지만, 분위기는 사뭇 다릅니다."
+    text = "더불어민주당을 비롯한 야당은 이날 본회의를 단독 소집해 개의했고, 여당인 국민의힘은 이에 반발해 불참했다."
     
     language = langdetector(text)
     config_path = os.path.join(os.path.dirname(ckpt_path), 'config.json')
