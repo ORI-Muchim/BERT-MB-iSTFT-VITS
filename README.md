@@ -107,6 +107,16 @@ Check [inference.py](inference.py)
 python inference.py -m ./models/kss/G_64000.pth
 ```
 
+Server Inference
+```sh
+python inference_server.py -m ./models/kss/G_64000.pth
+```
+
+Do Inference
+```sh
+curl -X POST -H "Content-Type: application/json" -d '{"text": "잠시 통화 괜찮으시면 전화를 끊지 말아주세요."}' http://localhost:5000/synthesize
+```
+
 ## To-Do
 
 - Korean TTS operation confirmed
