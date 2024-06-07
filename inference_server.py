@@ -46,7 +46,7 @@ def synthesize():
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     
     for spk_name, spk_id in model.hps.data.spk2id.items():
-        save_path = f'{output_dir}/{spk_name}/output_{timestamp}.wav'
+        save_path = f'{output_dir}/{spk_name}/{timestamp}.wav'
         os.makedirs(os.path.dirname(save_path), exist_ok=True)
         model.tts_to_file(text, spk_id, save_path)
     
